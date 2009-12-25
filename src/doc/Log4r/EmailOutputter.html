@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Log4r::EmailOutputter</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../log4r/outputter/emailoutputter_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="log4r/outputter/emailoutputter.rb">log4r/outputter/emailoutputter.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Outputter</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000066">::new</a></li>
+					
+					<li><a href="#M000072">#canonical_log</a></li>
+					
+					<li><a href="#M000069">#decode_immediate_at</a></li>
+					
+					<li><a href="#M000067">#flush</a></li>
+					
+					<li><a href="#M000073">#send_mail</a></li>
+					
+					<li><a href="#M000068">#validate</a></li>
+					
+					<li><a href="#M000071">#validate_smtp_params</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Log4r::EmailOutputter</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="server-attribute-method" class="method-detail">
+				<a name="server"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">server</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="port-attribute-method" class="method-detail">
+				<a name="port"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">port</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="domain-attribute-method" class="method-detail">
+				<a name="domain"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">domain</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="acct-attribute-method" class="method-detail">
+				<a name="acct"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">acct</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="authtype-attribute-method" class="method-detail">
+				<a name="authtype"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">authtype</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="subject-attribute-method" class="method-detail">
+				<a name="subject"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">subject</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000066"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(_name, hash={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 12</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">_name</span>, <span class="ruby-identifier">hash</span>={})
+      <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">_name</span>, <span class="ruby-identifier">hash</span>)
+      <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">hash</span>)
+      <span class="ruby-ivar">@buff</span> = []
+      <span class="ruby-keyword kw">begin</span> 
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {
+          <span class="ruby-node">&quot;EmailOutputter '#{@name}' running SMTP client on #{@server}:#{@port}&quot;</span>
+        }
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span>(<span class="ruby-value">-2</span>) {
+          <span class="ruby-node">&quot;EmailOutputter '#{@name}' failed to start SMTP client!&quot;</span>
+        }
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-identifier">e</span>}
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">OFF</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="flush-method" class="method-detail ">
+				<a name="M000067"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">flush</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+send out an email with the current buffer
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="flush-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 31</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flush</span>
+      <span class="ruby-identifier">synch</span> { <span class="ruby-identifier">send_mail</span> }
+      <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-node">&quot;Flushed EmailOutputter '#{@name}'&quot;</span>}
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="canonical-log-method" class="method-detail ">
+				<a name="M000072"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">canonical_log</span><span
+						class="method-args">(event)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="canonical-log-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 77</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">canonical_log</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-identifier">synch</span> {
+        <span class="ruby-ivar">@buff</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@formatfirst</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">then</span> <span class="ruby-ivar">@formatter</span>.<span class="ruby-identifier">format</span> <span class="ruby-identifier">event</span>
+          <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">event</span> 
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">send_mail</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@buff</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@buffsize</span> <span class="ruby-keyword kw">or</span> <span class="ruby-ivar">@immediate</span>[<span class="ruby-identifier">event</span>.<span class="ruby-identifier">level</span>]
+      }
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-immediate-at-method" class="method-detail ">
+				<a name="M000069"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_immediate_at</span><span
+						class="method-args">(hash)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-immediate-at-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 45</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">decode_immediate_at</span>(<span class="ruby-identifier">hash</span>)
+      <span class="ruby-ivar">@immediate</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">_at</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:immediate_at</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'immediate_at'</span>])
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_at</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">comma_split</span>(<span class="ruby-identifier">_at</span>).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">lname</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">level</span> = <span class="ruby-constant">LNAMES</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">lname</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">level</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span>(<span class="ruby-value">-2</span>) <span class="ruby-keyword kw">do</span>
+            <span class="ruby-node">&quot;EmailOutputter: skipping bad immediate_at level name '#{lname}'&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">next</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-ivar">@immediate</span>[<span class="ruby-identifier">level</span>] = <span class="ruby-keyword kw">true</span>
+      }
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="send-mail-method" class="method-detail ">
+				<a name="M000073"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">send_mail</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="send-mail-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 87</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_mail</span>
+      <span class="ruby-identifier">msg</span> = 
+        <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@formatfirst</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">then</span> <span class="ruby-ivar">@buff</span>.<span class="ruby-identifier">join</span> 
+        <span class="ruby-keyword kw">else</span> <span class="ruby-ivar">@buff</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@formatter</span>.<span class="ruby-identifier">format</span> <span class="ruby-identifier">e</span>}.<span class="ruby-identifier">join</span> 
+        <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt">### build a mail header for RFC 822</span>
+      <span class="ruby-identifier">rfc822msg</span> =
+        <span class="ruby-node">&quot;From: #{@from}\n&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;To: #{@to}\n&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;Subject: #{@subject}\n&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;Date: #{Time.now.strftime( &quot;%a, %d %b %Y %H:%M:%S %z %Z&quot;)}\n&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;Message-Id: &lt;#{&quot;%.8f&quot; % Time.now.to_f}@#{@domain}&gt;\n\n&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;#{msg}&quot;</span>
+
+      <span class="ruby-comment cmt">### send email</span>
+      <span class="ruby-keyword kw">begin</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">SMTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-operator">*</span><span class="ruby-ivar">@params</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">smtp</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">smtp</span>.<span class="ruby-identifier">sendmail</span>(<span class="ruby-identifier">rfc822msg</span>, <span class="ruby-ivar">@from</span>, <span class="ruby-ivar">@to</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span>(<span class="ruby-value">-2</span>) {
+          <span class="ruby-node">&quot;EmailOutputter '#{@name}' couldn't send email!&quot;</span>
+        }
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-identifier">e</span>}
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">OFF</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword kw">ensure</span> <span class="ruby-ivar">@buff</span>.<span class="ruby-identifier">clear</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="validate-method" class="method-detail ">
+				<a name="M000068"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">validate</span><span
+						class="method-args">(hash)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="validate-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 38</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">hash</span>)
+      <span class="ruby-ivar">@buffsize</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:buffsize</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'buffsize'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-value">100</span>).<span class="ruby-identifier">to_i</span>
+      <span class="ruby-ivar">@formatfirst</span> = <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">decode_bool</span>(<span class="ruby-identifier">hash</span>, <span class="ruby-identifier">:formatfirst</span>, <span class="ruby-keyword kw">false</span>)
+      <span class="ruby-identifier">decode_immediate_at</span>(<span class="ruby-identifier">hash</span>)
+      <span class="ruby-identifier">validate_smtp_params</span>(<span class="ruby-identifier">hash</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="validate-smtp-params-method" class="method-detail ">
+				<a name="M000071"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">validate_smtp_params</span><span
+						class="method-args">(hash)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="validate-smtp-params-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/outputter/emailoutputter.rb, line 61</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate_smtp_params</span>(<span class="ruby-identifier">hash</span>)
+      <span class="ruby-ivar">@from</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:from</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'from'</span>])
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify from address&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@from</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">_to</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:to</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'to'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-value str">&quot;&quot;</span>)
+      <span class="ruby-ivar">@to</span> = <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">comma_split</span>(<span class="ruby-identifier">_to</span>) 
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify recepients&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@to</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-ivar">@server</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:server</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'server'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-value str">'localhost'</span>)
+      <span class="ruby-ivar">@port</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:port</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-value">25</span>).<span class="ruby-identifier">to_i</span>
+      <span class="ruby-ivar">@domain</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:domain</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'domain'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'HOSTNAME'</span>])
+      <span class="ruby-ivar">@acct</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:acct</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'acct'</span>])
+      <span class="ruby-ivar">@passwd</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:passwd</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'passwd'</span>])
+      <span class="ruby-ivar">@authtype</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:authtype</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'authtype'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">:cram_md5</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">intern</span>
+      <span class="ruby-ivar">@subject</span> = (<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:subject</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'subject'</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-node">&quot;Message of #{$0}&quot;</span>)
+      <span class="ruby-ivar">@params</span> = [<span class="ruby-ivar">@server</span>, <span class="ruby-ivar">@port</span>, <span class="ruby-ivar">@domain</span>, <span class="ruby-ivar">@acct</span>, <span class="ruby-ivar">@passwd</span>, <span class="ruby-ivar">@authtype</span>]
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

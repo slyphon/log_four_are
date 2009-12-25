@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Log4r::Configurator</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../log4r/configurator_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="log4r/configurator.rb">log4r/configurator.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000011">::[]</a></li>
+					
+					<li><a href="#M000012">::[]=</a></li>
+					
+					<li><a href="#M000019">::actual_load</a></li>
+					
+					<li><a href="#M000014">::custom_levels</a></li>
+					
+					<li><a href="#M000022">::decode_custom_levels</a></li>
+					
+					<li><a href="#M000027">::decode_formatter</a></li>
+					
+					<li><a href="#M000028">::decode_hash_params</a></li>
+					
+					<li><a href="#M000030">::decode_logger</a></li>
+					
+					<li><a href="#M000032">::decode_logger_common</a></li>
+					
+					<li><a href="#M000031">::decode_logserver</a></li>
+					
+					<li><a href="#M000026">::decode_outputter</a></li>
+					
+					<li><a href="#M000025">::decode_parameter</a></li>
+					
+					<li><a href="#M000024">::decode_parameters</a></li>
+					
+					<li><a href="#M000021">::decode_pre_config</a></li>
+					
+					<li><a href="#M000020">::decode_xml</a></li>
+					
+					<li><a href="#M000018">::detect_rexml</a></li>
+					
+					<li><a href="#M000023">::global_config</a></li>
+					
+					<li><a href="#M000015">::load_xml_file</a></li>
+					
+					<li><a href="#M000017">::load_xml_string</a></li>
+					
+					<li><a href="#M000029">::paramsub</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="../REXML.html">REXML</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Log4r::Configurator</h1>
+
+		<div id="description">
+			<p>
+See <a href="../log4r/configurator_rb.html">log4r/configurator.rb</a>
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="ExcludeParams">ExcludeParams</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000011"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">(param)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Get a parameter&#8217;s value
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 25</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">param</span>); <span class="ruby-ivar">@@params</span>[<span class="ruby-identifier">param</span>] <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000012"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]=</span><span
+						class="method-args">(param, value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Define a parameter with a value
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 27</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">[]=</span>(<span class="ruby-identifier">param</span>, <span class="ruby-identifier">value</span>); <span class="ruby-ivar">@@params</span>[<span class="ruby-identifier">param</span>] = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="custom-levels-method" class="method-detail ">
+				<a name="M000014"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">custom_levels</span><span
+						class="method-args">(*levels)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the custom levels. This method accepts symbols or strings.
+</p>
+<pre>
+  Configurator.custom_levels('My', 'Custom', :Levels)
+</pre>
+<p>
+Alternatively, you can specify custom levels in XML:
+</p>
+<pre>
+  &lt;log4r_config&gt;
+    &lt;pre_config&gt;
+      &lt;custom_levels&gt;
+        My, Custom, Levels
+      &lt;/custom_levels&gt;
+      ...
+</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="custom-levels-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 42</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">custom_levels</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">levels</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">root</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">levels</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">levels</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-identifier">levels</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\s/</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/^[A-Z]/</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;#{name} is not a valid Ruby Constant name&quot;</span>, <span class="ruby-identifier">caller</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">Log4r</span>.<span class="ruby-identifier">define_levels</span> <span class="ruby-operator">*</span><span class="ruby-identifier">levels</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="load-xml-file-method" class="method-detail ">
+				<a name="M000015"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_xml_file</span><span
+						class="method-args">(filename)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Given a filename, loads the XML configuration for <a
+href="../Log4r.html">Log4r</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-xml-file-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 54</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_xml_file</span>(<span class="ruby-identifier">filename</span>)
+      <span class="ruby-identifier">detect_rexml</span>
+      <span class="ruby-identifier">actual_load</span> <span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>))
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="load-xml-string-method" class="method-detail ">
+				<a name="M000017"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_xml_string</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+You can load a String XML configuration instead of a file.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-xml-string-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 60</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_xml_string</span>(<span class="ruby-identifier">string</span>)
+      <span class="ruby-identifier">detect_rexml</span>
+      <span class="ruby-identifier">actual_load</span> <span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-class-method-details" class="method-section section">
+			<h3 class="section-header">Private Class Methods</h3>
+
+		
+			<div id="actual-load-method" class="method-detail ">
+				<a name="M000019"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">actual_load</span><span
+						class="method-args">(doc)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="actual-load-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 76</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">actual_load</span>(<span class="ruby-identifier">doc</span>)
+      <span class="ruby-identifier">confignode</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'//log4r_config'</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">confignode</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>, 
+        <span class="ruby-value str">&quot;&lt;log4r_config&gt; element not defined&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">decode_xml</span>(<span class="ruby-identifier">confignode</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-custom-levels-method" class="method-detail ">
+				<a name="M000022"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_custom_levels</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-custom-levels-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 101</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_custom_levels</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">root</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">text</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword kw">begin</span> <span class="ruby-identifier">custom_levels</span> <span class="ruby-operator">*</span><span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">comma_split</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">text</span>)
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">TypeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">te</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>, <span class="ruby-identifier">te</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-4</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-formatter-method" class="method-detail ">
+				<a name="M000027"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_formatter</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-formatter-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 160</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_formatter</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'type'</span> 
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>, <span class="ruby-value str">&quot;Formatter missing type&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-4</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">buff</span> = <span class="ruby-node">&quot;#{type}.new &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">decode_hash_params</span>(<span class="ruby-identifier">e</span>).<span class="ruby-identifier">join</span>(<span class="ruby-value str">','</span>)
+      <span class="ruby-keyword kw">begin</span> <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">buff</span>)
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ae</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>,
+        <span class="ruby-node">&quot;Problem creating outputter: #{ae.message}&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-4</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-hash-params-method" class="method-detail ">
+				<a name="M000028"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_hash_params</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does the fancy parameter to hash argument transformation
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-hash-params-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 175</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_hash_params</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-identifier">buff</span> = []
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each_attribute</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> 
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ExcludeParams</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;:&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;=&gt;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">paramsub</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">value</span>)
+      }
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> 
+        <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ExcludeParams</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;:&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;=&gt;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">paramsub</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">text</span>)
+      }
+      <span class="ruby-identifier">buff</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-logger-method" class="method-detail ">
+				<a name="M000030"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_logger</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-logger-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 195</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_logger</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-identifier">l</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span>(<span class="ruby-value str">'name'</span>)
+      <span class="ruby-identifier">decode_logger_common</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">e</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-logger-common-method" class="method-detail ">
+				<a name="M000032"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_logger_common</span><span
+						class="method-args">(l, e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-logger-common-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 208</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_logger_common</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">e</span>)
+      <span class="ruby-identifier">level</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'level'</span>
+      <span class="ruby-identifier">additive</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'additive'</span>
+      <span class="ruby-identifier">trace</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'trace'</span>
+      <span class="ruby-identifier">l</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">LNAMES</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">level</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">level</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">l</span>.<span class="ruby-identifier">additive</span> = <span class="ruby-identifier">additive</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">additive</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">l</span>.<span class="ruby-identifier">trace</span> = <span class="ruby-identifier">trace</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">trace</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-comment cmt"># and now for outputters</span>
+      <span class="ruby-identifier">outs</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'outputters'</span>
+      <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">comma_split</span>(<span class="ruby-identifier">outs</span>).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">add</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">strip</span>} <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">outs</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span>(<span class="ruby-value str">'outputter'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">name</span> = (<span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'name'</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">text</span>)
+        <span class="ruby-identifier">l</span>.<span class="ruby-identifier">add</span> <span class="ruby-constant">Outputter</span>[<span class="ruby-identifier">name</span>]
+      }
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-logserver-method" class="method-detail ">
+				<a name="M000031"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_logserver</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-logserver-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 200</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_logserver</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">HAVE_REXML</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'name'</span>
+      <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'uri'</span>
+      <span class="ruby-identifier">l</span> = <span class="ruby-constant">LogServer</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">uri</span>
+      <span class="ruby-identifier">decode_logger_common</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">e</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-outputter-method" class="method-detail ">
+				<a name="M000026"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_outputter</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-outputter-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 126</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_outputter</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-comment cmt"># fields</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'name'</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'type'</span>
+      <span class="ruby-identifier">level</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'level'</span>
+      <span class="ruby-identifier">only_at</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'only_at'</span>
+      <span class="ruby-comment cmt"># validation</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>, <span class="ruby-value str">&quot;Outputter missing name&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-3</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>, <span class="ruby-value str">&quot;Outputter missing type&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-3</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">validate_level</span>(<span class="ruby-constant">LNAMES</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">level</span>)) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">level</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">only_levels</span> = []
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">only_at</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">lev</span> <span class="ruby-keyword kw">in</span> <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">comma_split</span>(<span class="ruby-identifier">only_at</span>)
+          <span class="ruby-identifier">alev</span> = <span class="ruby-constant">LNAMES</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">lev</span>)
+          <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">validate_level</span>(<span class="ruby-identifier">alev</span>, <span class="ruby-value">3</span>)
+          <span class="ruby-identifier">only_levels</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">alev</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">formatter</span> = <span class="ruby-identifier">decode_formatter</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'formatter'</span>])
+      <span class="ruby-comment cmt"># build the eval string</span>
+      <span class="ruby-identifier">buff</span> = <span class="ruby-node">&quot;Outputter[name] = #{type}.new name&quot;</span>
+      <span class="ruby-identifier">buff</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;,:level=&gt;#{LNAMES.index(level)}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">level</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">buff</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;,:formatter=&gt;formatter&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">params</span> = <span class="ruby-identifier">decode_hash_params</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-identifier">buff</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;,&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">','</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">begin</span> <span class="ruby-identifier">eval</span> <span class="ruby-identifier">buff</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ae</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigError</span>, 
+        <span class="ruby-node">&quot;Problem creating outputter: #{ae.message}&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-3</span>]
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">Outputter</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">only_at</span> <span class="ruby-operator">*</span><span class="ruby-identifier">only_levels</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">only_levels</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-constant">Outputter</span>[<span class="ruby-identifier">name</span>]
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-parameter-method" class="method-detail ">
+				<a name="M000025"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_parameter</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-parameter-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 122</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_parameter</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-ivar">@@params</span>[<span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span>(<span class="ruby-value str">'name'</span>)] = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'value'</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-parameters-method" class="method-detail ">
+				<a name="M000024"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_parameters</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-parameters-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 118</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_parameters</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@@params</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">text</span>} <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-pre-config-method" class="method-detail ">
+				<a name="M000021"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_pre_config</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-pre-config-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 92</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_pre_config</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">root</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">decode_custom_levels</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'custom_levels'</span>])
+      <span class="ruby-identifier">global_config</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'global'</span>])
+      <span class="ruby-identifier">global_config</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'root'</span>])
+      <span class="ruby-identifier">decode_parameters</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'parameters'</span>])
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span>(<span class="ruby-value str">'parameter'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">decode_parameter</span>(<span class="ruby-identifier">p</span>)}
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="decode-xml-method" class="method-detail ">
+				<a name="M000020"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decode_xml</span><span
+						class="method-args">(doc)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decode-xml-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 85</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">decode_xml</span>(<span class="ruby-identifier">doc</span>)
+      <span class="ruby-identifier">decode_pre_config</span>(<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">elements</span>[<span class="ruby-value str">'pre_config'</span>])
+      <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span>(<span class="ruby-value str">'outputter'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">decode_outputter</span>(<span class="ruby-identifier">e</span>)}
+      <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span>(<span class="ruby-value str">'logger'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">decode_logger</span>(<span class="ruby-identifier">e</span>)}
+      <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">each</span>(<span class="ruby-value str">'logserver'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">decode_logserver</span>(<span class="ruby-identifier">e</span>)}
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="detect-rexml-method" class="method-detail ">
+				<a name="M000018"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">detect_rexml</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="detect-rexml-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 69</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">detect_rexml</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">HAVE_REXML</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>,
+        <span class="ruby-value str">&quot;Need REXML to load XML configuration&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="global-config-method" class="method-detail ">
+				<a name="M000023"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">global_config</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="global-config-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 109</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">global_config</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">globlev</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">value_of</span> <span class="ruby-value str">'level'</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">globlev</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">lev</span> = <span class="ruby-constant">LNAMES</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">globlev</span>)     <span class="ruby-comment cmt"># find value in LNAMES</span>
+      <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">validate_level</span>(<span class="ruby-identifier">lev</span>, <span class="ruby-value">4</span>)  <span class="ruby-comment cmt"># choke on bad level</span>
+      <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">global</span>.<span class="ruby-identifier">level</span> = <span class="ruby-identifier">lev</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="paramsub-method" class="method-detail ">
+				<a name="M000029"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">paramsub</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Substitues any #{foo} in the XML with Parameter[&#8216;foo&#8217;]
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="paramsub-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/configurator.rb, line 189</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">paramsub</span>(<span class="ruby-identifier">str</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-ivar">@@params</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">param</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub!</span> <span class="ruby-value str">'#{'</span><span class="ruby-operator">+</span><span class="ruby-identifier">param</span><span class="ruby-operator">+</span><span class="ruby-value str">'}'</span>, <span class="ruby-identifier">value</span>}
+      <span class="ruby-value str">&quot;'&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;'&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

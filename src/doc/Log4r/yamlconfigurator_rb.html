@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: yamlconfigurator.rb [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">Thu Mar 18 19:31:08 -0800 2004</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>log4r/logger</li>
+				
+					<li>log4r/outputter/staticoutputter</li>
+				
+					<li>log4r/logserver</li>
+				
+					<li>log4r/outputter/remoteoutputter</li>
+				
+					<li>yaml</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<h1>Configuring <a href="../Log4r.html">Log4r</a> with <a href="../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></h1>
+<p>
+The YamlConfigurator class allows one to set up <a
+href="../Log4r.html">Log4r</a> via YAML. It is used almost exactly as <a
+href="../Log4r/Configurator.html">Log4r::Configurator</a> and has the same
+features,
+</p>
+<pre>
+  ycfg = YamlConfigurator    # handy shorthand
+  ycfg['foo'] = bar          # replaces instances of #{foo} in the YAML with bar
+  ycfg.load_yaml_file('foo.yaml')
+</pre>
+<p>
+Ruby 1.7 and 1.8 comes with a YAML parser. Hence, YAML can be used to
+configure <a href="../Log4r.html">Log4r</a> out of the box.
+</p>
+<p>
+A comprehensive example of a <a href="../Log4r.html">Log4r</a> YAML
+configuration is provided in the examples directory.
+</p>
+<p>
+To use this class:
+</p>
+<pre>
+  require 'log4r/yamlconfigurator'
+</pre>
+<p>
+Thanks to Andreas Hund for making this possible.
+</p>
+<h2>Other Info</h2>
+<p>
+Version: $Id: yamlconfigurator.rb,v 1.1.1.1 2004/03/19 03:31:08 fando Exp $
+</p>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+

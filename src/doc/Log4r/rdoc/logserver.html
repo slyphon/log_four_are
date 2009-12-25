@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: logserver [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1>Remote Logging</h1>
+<p>
+Want to use <a href="../../Log4r.html">Log4r</a> over a network? No
+problem! A <a
+href="../../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a> will
+send its LogEvents to a <a
+href="../../Log4r/LogServer.html">Log4r::LogServer</a>. These two classes
+are as easy to set up and use as the rest of <a
+href="../../Log4r.html">Log4r</a>.
+</p>
+<h2>Use ROMP</h2>
+<p>
+There is one catch though: ROMP is required to use this service. It is a
+DRb-like system with superb performance and better features. Get ROMP at <a
+href="http://rubystuff.org/romp/">rubystuff.org/romp/</a>
+</p>
+<h2>LogServer</h2>
+<p>
+LogServer is simply a kind of Logger which embeds a ROMP::Server. Like a
+normal Logger, you can give it Outputters, set its level and so on. Its
+logging methods are accessible over a network and are called by a
+RemoteOutputter on another host.
+</p>
+<h3>LogServer Setup</h3>
+<p>
+Setup is easy. First,
+</p>
+<pre>
+  require 'log4r/logserver'
+</pre>
+<p>
+The following sets up a LogServer named &#8216;central&#8217; on localhost
+port 9999:
+</p>
+<pre>
+  LogServer.new('central', 'tcpromp://localhost:9999')
+</pre>
+<p>
+We manipulate it and give it outputters as normal:
+</p>
+<pre>
+  serv = Logger['central']              # grab our new LogServer
+  serv.add 'stdout'                     # make it log to $stdout
+</pre>
+<h2>RemoteOutputter</h2>
+<p>
+RemoteOutputter is simply a kind of Outputter that embeds a ROMP::Client.
+When RemoteOutputter gets a LogEvent, it will forward it to whatever
+LogServer it&#8217;s connected to. In essence, RemoteOutputter behaves like
+a Logger that is forwarding a LogEvent to another Logger (as is done in
+hierarchical logging).
+</p>
+<h3>RemoteOutputter Setup</h3>
+<p>
+First,
+</p>
+<pre>
+  require 'log4r/outputter/remoteoutputter'
+</pre>
+<p>
+Unlike typical outputters, RemoteOutputter doesn&#8217;t do any formatting.
+That&#8217;s up to the LogServer&#8217;s outputters. Otherwise,
+RemoteOutputter can be set up as usual. The ROMP uri of the LogServer must
+be specified.
+</p>
+<pre>
+  RemoteOutputter.new 'client', :uri=&gt;'tcpromp://localhost:9999'
+</pre>
+<h3>Using RemoteOutputter</h3>
+<p>
+Give our new RemoteOutputter to a logger:
+</p>
+<pre>
+  mylog = Logger['mylog']
+  mylog.add 'client'
+</pre>
+<p>
+Now, whenever mylog generates a LogEvent, LogServer should get a copy.
+Doing the following:
+</p>
+<pre>
+  mylog.info &quot;This is a message from 'mylog'&quot;
+</pre>
+<p>
+Produces this output on LogServer&#8217;s console:
+</p>
+<pre>
+  INFO mylog: This is a message from 'mylog'
+</pre>
+<h2>XML Configuration</h2>
+<p>
+RemoteOutputter is set up like normal Outputters. LogServer is set up like
+a normal Logger, but with an element name of logserver instead of logger:
+</p>
+<pre>
+  &lt;log4r_config&gt;
+    &lt;logserver name=&quot;name&quot; uri=&quot;tcpromp://localhost:9999&quot;&gt;
+    ...
+</pre>
+<h2>Debugging</h2>
+<p>
+It is recommended to set up a logger named &#8216;log4r&#8217; on both the
+server and client to see what LogServer and RemoteOutputter are up to. Both
+of the classes use Log4r&#8217;s internal logging to report any problems.
+See the section <b>What&#8217;s Going on Inside?</b> in log4r.rb for more
+info.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

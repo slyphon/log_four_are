@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: datefileoutputter.rb [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">Thu Mar 18 19:31:09 -0800 2004</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>log4r/outputter/fileoutputter</li>
+				
+					<li>log4r/staticlogger</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<h1>DateFileOutputter</h1>
+<p>
+Subclass of FileOutputter that changes the log file daily. When a new day
+begins, a new file is created with the date included in the name.
+</p>
+<h2>Usage</h2>
+<pre>
+  df_out = DateFileOutputter.new('name',
+             :dirname=&quot;/tmp&quot;, :date_pattern=&gt;&quot;%m-%d&quot;
+           )
+</pre>
+<h2>Rate of Change</h2>
+<p>
+A new logfile is created whenever the current time as formatted by the date
+pattern no longer matches the previous time. (This is a simple String
+comparison.) So, in order to change the frequency of the rollover, just
+alter the date pattern to match how fast the files should be generated. For
+instance, to generate files by the minute,
+</p>
+<pre>
+  df_out.date_pattern = &quot;%M&quot;
+</pre>
+<p>
+This causes the following files to show up one minute apart, asuming the
+script starts at the 4th minute of the hour:
+</p>
+<pre>
+  file_04.rb
+  file_05.rb
+  file_06.rb
+  ...
+</pre>
+<p>
+The only limitation of this approach is that the precise time cannot be
+recorded as the smallest time interval equals the rollover period for this
+system.
+</p>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+

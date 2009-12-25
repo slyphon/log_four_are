@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Log4r::Logger</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../log4r/loggerfactory_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="log4r/loggerfactory.rb">log4r/loggerfactory.rb</a></li>
+					
+						<li><a href="../log4r/logger_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="log4r/logger.rb">log4r/logger.rb</a></li>
+					
+						<li><a href="../log4r/repository_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="log4r/repository.rb">log4r/repository.rb</a></li>
+					
+						<li><a href="../log4r/staticlogger_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="log4r/staticlogger.rb">log4r/staticlogger.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="Logger/LoggerFactory.html">Log4r::Logger::LoggerFactory</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Logger/Repository.html">Log4r::Logger::Repository</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000111">::[]</a></li>
+					
+					<li><a href="#M000113">::each</a></li>
+					
+					<li><a href="#M000114">::each_logger</a></li>
+					
+					<li><a href="#M000112">::get</a></li>
+					
+					<li><a href="#M000110">::global</a></li>
+					
+					<li><a href="#M000115">::log_internal</a></li>
+					
+					<li><a href="#M000037">::new</a></li>
+					
+					<li><a href="#M000109">::root</a></li>
+					
+					<li><a href="#M000048">#==</a></li>
+					
+					<li><a href="#M000045">#add</a></li>
+					
+					<li><a href="#M000041">#additive=</a></li>
+					
+					<li><a href="#M000039">#deal_with_inheritance</a></li>
+					
+					<li><a href="#M000047">#is_root?</a></li>
+					
+					<li><a href="#M000040">#level=</a></li>
+					
+					<li><a href="#M000044">#outputters=</a></li>
+					
+					<li><a href="#M000043">#parent=</a></li>
+					
+					<li><a href="#M000046">#remove</a></li>
+					
+					<li><a href="#M000042">#trace=</a></li>
+					
+					<li><a href="#M000038">#validate_name</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Log4r::Logger</h1>
+
+		<div id="description">
+			<p>
+See <a href="../log4r/logger_rb.html">log4r/logger.rb</a>
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="name-attribute-method" class="method-detail">
+				<a name="name"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">name</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="fullname-attribute-method" class="method-detail">
+				<a name="fullname"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">fullname</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="path-attribute-method" class="method-detail">
+				<a name="path"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">path</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="level-attribute-method" class="method-detail">
+				<a name="level"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">level</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="parent-attribute-method" class="method-detail">
+				<a name="parent"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">parent</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="additive-attribute-method" class="method-detail">
+				<a name="additive"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">additive</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="trace-attribute-method" class="method-detail">
+				<a name="trace"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">trace</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="outputters-attribute-method" class="method-detail">
+				<a name="outputters"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">outputters</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000111"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">(_fullname)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Get a logger with a fullname from the repository or nil if logger
+wasn&#8217;t found.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 12</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">_fullname</span>)
+      <span class="ruby-comment cmt"># forces creation of RootLogger if it doesn't exist yet.</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-constant">RootLogger</span>.<span class="ruby-identifier">instance</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_fullname</span><span class="ruby-operator">==</span><span class="ruby-value str">'root'</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">_fullname</span><span class="ruby-operator">==</span><span class="ruby-value str">'global'</span>
+      <span class="ruby-constant">Repository</span>[<span class="ruby-identifier">_fullname</span>]
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="each-method" class="method-detail ">
+				<a name="M000113"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">each</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Yields fullname and logger for every logger in the system.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="each-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 29</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each</span>
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">fullname</span>, <span class="ruby-identifier">logger</span> <span class="ruby-keyword kw">in</span> <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">loggers</span>
+        <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">fullname</span>, <span class="ruby-identifier">logger</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="each-logger-method" class="method-detail ">
+				<a name="M000114"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">each_logger</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="each-logger-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 35</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each_logger</span>
+      <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">loggers</span>.<span class="ruby-identifier">each_value</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">logger</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">logger</span>}
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="get-method" class="method-detail ">
+				<a name="M000112"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get</span><span
+						class="method-args">(_fullname)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Like Logger[] except that it raises NameError if <a
+href="Logger.html">Logger</a> wasn&#8217;t found.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 20</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">_fullname</span>)
+      <span class="ruby-identifier">logger</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">_fullname</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">NameError</span>, <span class="ruby-node">&quot;Logger '#{_fullname}' not found.&quot;</span>, <span class="ruby-identifier">caller</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">logger</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="global-method" class="method-detail ">
+				<a name="M000110"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">global</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the root logger. Identical to <a
+href="Logger.html#M000109">Logger.root</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="global-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 7</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">global</span>; <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">root</span> <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="log-internal-method" class="method-detail ">
+				<a name="M000115"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">log_internal</span><span
+						class="method-args">(level=1)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Internal logging for <a href="../Log4r.html">Log4r</a> components. Accepts
+only blocks. To see such log events, create a logger named
+&#8216;log4r&#8217; and give it an outputter.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="log-internal-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 43</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">log_internal</span>(<span class="ruby-identifier">level</span>=<span class="ruby-value">1</span>)
+      <span class="ruby-identifier">internal</span> = <span class="ruby-constant">Logger</span>[<span class="ruby-value str">'log4r'</span>]
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">internal</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">internal</span>.<span class="ruby-identifier">send</span>(<span class="ruby-constant">LNAMES</span>[<span class="ruby-identifier">level</span>].<span class="ruby-identifier">downcase</span>, <span class="ruby-keyword kw">yield</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000037"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(_fullname, _level=nil, _additive=true, _trace=false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Logger.html">Logger</a> requires a name. The last 3 parameters
+are:
+</p>
+<table>
+<tr><td valign="top">level:</td><td>Do I have a level? (Otherwise, I&#8217;ll inherit my parent&#8217;s)
+
+</td></tr>
+<tr><td valign="top">additive:</td><td>Am I additive?
+
+</td></tr>
+<tr><td valign="top">trace:</td><td>Do I record the execution trace? (slows things a wee bit)
+
+</td></tr>
+</table>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 26</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">_fullname</span>, <span class="ruby-identifier">_level</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">_additive</span>=<span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">_trace</span>=<span class="ruby-keyword kw">false</span>)
+      <span class="ruby-comment cmt"># validation</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Logger must have a name&quot;</span>, <span class="ruby-identifier">caller</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_fullname</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">validate_level</span>(<span class="ruby-identifier">_level</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">_level</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">validate_name</span>(<span class="ruby-identifier">_fullname</span>)
+      
+      <span class="ruby-comment cmt"># create the logger</span>
+      <span class="ruby-ivar">@fullname</span> = <span class="ruby-identifier">_fullname</span>
+      <span class="ruby-ivar">@outputters</span> = []
+      <span class="ruby-ivar">@additive</span> = <span class="ruby-identifier">_additive</span>
+      <span class="ruby-identifier">deal_with_inheritance</span>(<span class="ruby-identifier">_level</span>)
+      <span class="ruby-constant">LoggerFactory</span>.<span class="ruby-identifier">define_methods</span>(<span class="ruby-keyword kw">self</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">trace</span> = <span class="ruby-identifier">_trace</span>
+      <span class="ruby-constant">Repository</span>[<span class="ruby-ivar">@fullname</span>] = <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="root-method" class="method-detail ">
+				<a name="M000109"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">root</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the root logger. Identical to <a
+href="Logger.html#M000110">Logger.global</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="root-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/staticlogger.rb, line 5</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">root</span>; <span class="ruby-keyword kw">return</span> <span class="ruby-constant">RootLogger</span>.<span class="ruby-identifier">instance</span> <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000048"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">==</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 140</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">object_id</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="add-method" class="method-detail ">
+				<a name="M000045"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add</span><span
+						class="method-args">(*_outputters)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Add outputters by name or by reference. Can be done any time.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 114</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">_outputters</span>)
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">thing</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">_outputters</span>
+        <span class="ruby-identifier">o</span> = (<span class="ruby-identifier">thing</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Outputter</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">thing</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Outputter</span>[<span class="ruby-identifier">thing</span>])
+        <span class="ruby-comment cmt"># some basic validation</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Outputter</span>)
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;Expected kind of Outputter, got #{o.class}&quot;</span>, <span class="ruby-identifier">caller</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;Couldn't find Outputter '#{thing}'&quot;</span>, <span class="ruby-identifier">caller</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-ivar">@outputters</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">o</span>
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-node">&quot;Added outputter '#{o.name}' to '#{@fullname}'&quot;</span>}
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@outputters</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="additive--method" class="method-detail ">
+				<a name="M000041"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">additive=</span><span
+						class="method-args">(_additive)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the additivity of the logger dynamically. True or false.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="additive--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 82</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">additive=</span>(<span class="ruby-identifier">_additive</span>)
+      <span class="ruby-ivar">@additive</span> = <span class="ruby-identifier">_additive</span>
+      <span class="ruby-constant">LoggerFactory</span>.<span class="ruby-identifier">define_methods</span>(<span class="ruby-keyword kw">self</span>)
+      <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-node">&quot;Logger '#{@fullname}' is additive&quot;</span>}
+      <span class="ruby-ivar">@additive</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="is-root--method" class="method-detail ">
+				<a name="M000047"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">is_root?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="is-root--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 138</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_root?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="level--method" class="method-detail ">
+				<a name="M000040"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">level=</span><span
+						class="method-args">(_level)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the logger level dynamically. Does not affect children.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="level--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 73</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">level=</span>(<span class="ruby-identifier">_level</span>)
+      <span class="ruby-constant">Log4rTools</span>.<span class="ruby-identifier">validate_level</span>(<span class="ruby-identifier">_level</span>)
+      <span class="ruby-ivar">@level</span> = <span class="ruby-identifier">_level</span>
+      <span class="ruby-constant">LoggerFactory</span>.<span class="ruby-identifier">define_methods</span>(<span class="ruby-keyword kw">self</span>)
+      <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-node">&quot;Logger '#{@fullname}' set to #{LNAMES[@level]}&quot;</span>}
+      <span class="ruby-ivar">@level</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="outputters--method" class="method-detail ">
+				<a name="M000044"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">outputters=</span><span
+						class="method-args">(_outputters)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the Outputters dynamically by name or reference. Can be done any time.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="outputters--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 108</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">outputters=</span>(<span class="ruby-identifier">_outputters</span>)
+      <span class="ruby-ivar">@outputters</span>.<span class="ruby-identifier">clear</span>
+      <span class="ruby-identifier">add</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">_outputters</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="parent--method" class="method-detail ">
+				<a name="M000043"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parent=</span><span
+						class="method-args">(parent)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Please don&#8217;t reset the parent
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parent--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 102</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parent=</span>(<span class="ruby-identifier">parent</span>)
+      <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="remove-method" class="method-detail ">
+				<a name="M000046"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">remove</span><span
+						class="method-args">(*_outputters)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Remove outputters from this logger by name only. Can be done any time.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="remove-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 130</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">_outputters</span>)
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">_outputters</span>
+        <span class="ruby-identifier">o</span> = <span class="ruby-constant">Outputter</span>[<span class="ruby-identifier">name</span>]
+        <span class="ruby-ivar">@outputters</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">o</span>
+        <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-node">&quot;Removed outputter '#{o.name}' from '#{@fullname}'&quot;</span>}
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="trace--method" class="method-detail ">
+				<a name="M000042"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">trace=</span><span
+						class="method-args">(_trace)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set whether the logger traces. Can be set dynamically. Defaults to false
+and understands the strings &#8216;true&#8217; and &#8216;false&#8217;.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="trace--source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 91</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace=</span>(<span class="ruby-identifier">_trace</span>)
+      <span class="ruby-ivar">@trace</span> =
+        <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">_trace</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;true&quot;</span>, <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">else</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">LoggerFactory</span>.<span class="ruby-identifier">define_methods</span>(<span class="ruby-keyword kw">self</span>)
+      <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">log_internal</span> {<span class="ruby-node">&quot;Logger '#{@fullname}' is tracing&quot;</span>} <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@trace</span>
+      <span class="ruby-ivar">@trace</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="deal-with-inheritance-method" class="method-detail ">
+				<a name="M000039"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deal_with_inheritance</span><span
+						class="method-args">(_level)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Parses name for location in heiarchy, sets the parent, and deals with level
+inheritance
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="deal-with-inheritance-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 53</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deal_with_inheritance</span>(<span class="ruby-identifier">_level</span>)
+      <span class="ruby-identifier">mypath</span> = <span class="ruby-ivar">@fullname</span>.<span class="ruby-identifier">split</span> <span class="ruby-constant">Log4rConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">LoggerPathDelimiter</span>
+      <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">mypath</span>.<span class="ruby-identifier">pop</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mypath</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-comment cmt"># then root is my daddy</span>
+        <span class="ruby-ivar">@path</span> = <span class="ruby-value str">&quot;&quot;</span>
+        <span class="ruby-comment cmt"># This is one of the guarantees that RootLogger gets created</span>
+        <span class="ruby-ivar">@parent</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">root</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">mypath</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Log4rConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">LoggerPathDelimiter</span>)
+        <span class="ruby-ivar">@parent</span> = <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">find_ancestor</span>(<span class="ruby-ivar">@path</span>)
+        <span class="ruby-ivar">@parent</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">root</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-comment cmt"># inherit the level if no level defined</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_level</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">then</span> <span class="ruby-ivar">@level</span> = <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">level</span>
+      <span class="ruby-keyword kw">else</span> <span class="ruby-ivar">@level</span> = <span class="ruby-identifier">_level</span> <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">reassign_any_children</span>(<span class="ruby-keyword kw">self</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="validate-name-method" class="method-detail ">
+				<a name="M000038"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">validate_name</span><span
+						class="method-args">(_fullname)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="validate-name-source">
+<pre>
+<span class="ruby-comment cmt"># File log4r/logger.rb, line 42</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate_name</span>(<span class="ruby-identifier">_fullname</span>)
+      <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">_fullname</span>.<span class="ruby-identifier">split</span> <span class="ruby-constant">Log4rConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">LoggerPathDelimiter</span>
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">part</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">parts</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Malformed path&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

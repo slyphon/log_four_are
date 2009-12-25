@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: formatter.rb [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">Fri Sep 18 22:16:43 -0700 2009</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>singleton</li>
+				
+					<li>log4r/base</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<h1>Formatters</h1>
+<p>
+Formatters are responsible for formatting LogEvent data. An Outputter
+owning a Formatter will invoke the <a
+href="../../Log4r/Formatter.html#M000007">Log4r::Formatter#format</a>
+method prior to writing.
+</p>
+<h2>Available Formatters</h2>
+<ul>
+<li><a href="../../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a> -
+default
+
+</li>
+<li><a href="../../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a> -
+most flexible. See <a
+href="patternformatter_rb.html">log4r/formatter/patternformatter.rb</a>
+
+</li>
+<li><a href="../../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a> -
+like BasicFormatter for Strings only (low noise)
+
+</li>
+<li><a href="../../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a> - for
+inspecting objects
+
+</li>
+<li>Log4r::NullFormatter - twirls on its feet and does nothing
+
+</li>
+</ul>
+<h1>XML Configuration</h1>
+<p>
+Specify the Formatter and its class (as <tt>type</tt>) under an
+<tt>&lt;outputter&gt;</tt> directive:
+</p>
+<pre>
+  &lt;outputter name=&quot;someout&quot; type=&quot;sometype&quot;&gt;
+    &lt;formatter type=&quot;Log4r::BasicFormatter&quot;/&gt;
+  &lt;/outputter&gt;
+</pre>
+<p>
+As explained in <a
+href="../configurator_rb.html">log4r/configurator.rb</a>, the hash
+arguments you would normally pass to <tt>new</tt> are specified as <em>XML
+parameters</em>. Only PatternFormatter has any of these.
+</p>
+<h1>Custom Formatting</h1>
+<p>
+Building a custom Formatter is extremely easy. Just define a class that
+extends Formatter and override the Formatter#format method. Then give it to
+any interested Outputters.
+</p>
+<p>
+If you&#8217;re interested in setting up your custom formatters in XML,
+please take a look at log4r/configurator.rb.
+</p>
+<h2>Data Available</h2>
+<p>
+See <a href="../../Log4r/LogEvent.html">Log4r::LogEvent</a>
+</p>
+<table>
+<tr><td valign="top">Version:</td><td>$Id: formatter.rb,v 1.2 2009/09/19 05:16:43 colbygk Exp $
+
+</td></tr>
+</table>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+

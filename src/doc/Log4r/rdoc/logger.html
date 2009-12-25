@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: logger [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1>Loggers</h1>
+<p>
+Loggers provide the interface for logging in <a
+href="../../Log4r.html">Log4r</a>. To create a logger, first come up with a
+name for it. Good choices include the name of the class using it, a service
+name, or the name of the file.
+</p>
+<p>
+To create a logger named &#8216;mylog&#8217;:
+</p>
+<pre>
+  Logger.new('mylog')
+</pre>
+<p>
+After creating a logger, it is stashed in a repository. The logger may be
+retrieved at any time:
+</p>
+<pre>
+  Logger['mylog']              # get mylog back
+</pre>
+<p>
+It will return nil if the logger is not found. Alternatively, if an
+Exception is desired when a nonexistant logger is referenced, the
+Logger#get command can be used:
+</p>
+<pre>
+  Logger.get('boguslog')       # raises NameError if it doesn't exist
+</pre>
+<h2>Manipulating a Logger&#8217;s Outputters</h2>
+<p>
+Loggers start out with no outputters. They can be added using the
+Logger#add method or set directly by modifying the Loggers#outputters
+array:
+</p>
+<pre>
+  mylog = Logger['mylog']
+
+  # assume we've created Outputters out1 through out4
+  mylog.outputters = out1, out2
+  mylog.add(out3, out4)
+  mylog.each_outputter {|o| o.flush}
+
+  # assume out5 through out7 have names 'out5' through 'out7' resp.
+  mylog.outputters = 'out5', 'out6'
+  mylog.add('out7')
+  mylog.remove('out5','out7')
+</pre>
+<p>
+Please see <a
+href="../outputter/outputter_rb.html">log4r/outputter/outputter.rb</a> and
+<a href="../../Log4r/Outputter.html">Log4r::Outputter</a> for more about
+outputters.
+</p>
+<h2>Logging Methods</h2>
+<p>
+To log something at a certain priority, use the logging method named after
+the lowercased priority level name:
+</p>
+<pre>
+  mylog.warn &quot;This is a message with priority WARN&quot;
+  mylog.fatal &quot;A FATAL message&quot;
+</pre>
+<p>
+Blocks can also be logged:
+</p>
+<pre>
+  mylog.warn {&quot;This is also a message with priority WARN&quot;}
+  mylog.debug do
+    # some complicated string magic
+    return result
+  end
+</pre>
+<p>
+The primary difference is that the block doesn&#8217;t get called unless
+the Logger can log at that level. It is useful for doing computationaly
+expensive things at a log event.
+</p>
+<h2>Query Methods</h2>
+<p>
+To ask <a href="../../Log4r.html">Log4r</a> whether it is capable of
+logging a certain level:
+</p>
+<pre>
+  mylog.warn?   # are we logging WARN?
+  mylog.fatal?  # how about FATAL?
+</pre>
+<p>
+Query methods and blocks accomplish the same thing:
+</p>
+<pre>
+  mylog.warn &quot;don't evaluate unless WARN is on&quot; if mylog.warn?
+  mylog.warn {&quot;don't evaluate unless WARN is on&quot;}
+</pre>
+<h2>What About the Special Levels?</h2>
+<p>
+<tt>ALL</tt> and <tt>OFF</tt> can be querried, but not logged:
+</p>
+<pre>
+  log.off?                    # true iff level is OFF
+  log.all?                    # true iff level is ALL
+  log.all &quot;Try to log&quot;        =&gt; Method not defined. (NameError)
+</pre>
+<h2>Custom Levels and Method Names</h2>
+<p>
+Suppose we&#8217;ve set up <a href="../../Log4r.html">Log4r</a> with the
+custom levels:
+</p>
+<pre>
+  Foo &lt; Bar &lt; Baz
+</pre>
+<p>
+As one might expect, the logging methods are named after them:
+</p>
+<pre>
+  log.bar &quot;something&quot;        # log at custom level Bar
+  log.bar?                   # are we logging at level Bar?
+</pre>
+<h1>Logger Inheritance</h1>
+<p>
+Normally, when a logger is created, its parent is set to RootLogger. If a
+Logger&#8217;s level isn&#8217;t specified at creation, it will inherit the
+level of its parent.
+</p>
+<p>
+To specify an ancestors of a logger besides RootLogger, include the names
+of the ancestors in order of ancestry and delimited by
+Log4r::Log4rConfig::LoggerPathDelimiter. For example, if the delimiter is
+the default <tt>::</tt>, our logger is &#8216;me&#8217; and its ancestors
+are &#8216;cain&#8217;, &#8216;grandpa&#8217;, and &#8216;pa&#8217;, we
+create the logger like so:
+</p>
+<pre>
+  Logger.new('cain::grandpa::pa::me')
+</pre>
+<p>
+This string is split into three compontents which can be used by a
+Formatter to avoid parsing the name:
+</p>
+<table>
+<tr><td valign="top">Logger#fullname:</td><td>The whole enchilada: &#8216;cain::grandpa::pa::me&#8217;
+
+</td></tr>
+<tr><td valign="top">Logger#name:</td><td>Just &#8216;me&#8217;
+
+</td></tr>
+</table>
+<p>
+To get this logger back from the repository,
+</p>
+<pre>
+  Logger['cain::grandpa::pa::me']
+</pre>
+<h1>Outputter Additivity</h1>
+<p>
+By default, Logger Outputters are <b>additive</b>. This means that a log
+event will also be sent to all of a logger&#8217;s ancestors. To stop this
+behavior, set a logger&#8217;s <tt>additive</tt> to false.
+</p>
+<pre>
+  Logger['foo'].additive = false
+</pre>
+<p>
+A Logger&#8217;s level, additivity and trace can be changed dynamically,
+but this is an expensive operation as the logging methods have to be
+redefined.
+</p>
+<h1>RootLogger</h1>
+<p>
+<a href="../../Log4r/RootLogger.html">Log4r::RootLogger</a> is the ancestor
+of all loggers. Its level defines the global logging threshold. Any loggers
+created <b>after</b> RootLogger&#8217;s level is set will not log below
+that level. By default, RootLogger&#8217;s level is set to <tt>ALL</tt>
+</p>
+<p>
+RootLogger is a singleton which gets created automaticallay. It can be
+retrieved at any time with Logger.root, Logger.global,
+Logger[&#8216;root&#8217;] or Logger[&#8216;global&#8217;].
+</p>
+<h2>Global Level</h2>
+<p>
+Suppose we want <em>everything</em> to ignore events less than FATAL. We
+can accomplish this easily:
+</p>
+<pre>
+  Logger.global.level = FATAL
+</pre>
+<p>
+Just be sure to set this before any other Loggers or Outputters are
+defined.
+</p>
+<h2>RootLogger Does Nothing</h2>
+<p>
+RootLogger itself behaves as if its level were permanently set to
+<tt>OFF</tt>, thus making it a sort of null object.
+</p>
+<h1>XML Configuration</h1>
+<p>
+Please see <a href="../configurator_rb.html">log4r/configurator.rb</a> for
+an overview of XML configuratoin.
+</p>
+<p>
+It&#8217;s easy to configure a Logger in XML. The following example should
+be sufficient:
+</p>
+<pre>
+    ...
+    &lt;logger name=&quot;papa::mylog&quot; level=&quot;DEBUG&quot; trace=&quot;true&quot;&gt;
+      &lt;additive&gt;false&lt;/additive&gt;
+      &lt;outputter&gt;stdout&lt;/outputter&gt;
+      &lt;outputters&gt;stderr, dancer, doner, blitzen&lt;/outputters&gt;
+    &lt;/logger&gt;
+    &lt;logger name=&quot;papa&quot; outputters=&quot;stderr, stdout&quot;/&gt;
+    ...
+</pre>
+<p>
+The element <tt>outputter</tt> can occur multiple times, but cannot be an
+attribute of <tt>logger</tt>. That is, it is not an <em>XML directive</em>.
+However, the element <tt>outputters</tt> is an <em>XML directive</em>, as
+are all the others.
+</p>
+<p>
+For more examples, check the <tt>examples</tt> directory in the <a
+href="../../Log4r.html">Log4r</a> package.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

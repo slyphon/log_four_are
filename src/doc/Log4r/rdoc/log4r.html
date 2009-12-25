@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: log4r [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1>#{version} <a href="../../Log4r.html">Log4r</a> API Reference</h1>
+<p>
+Welcome to the <a href="../../Log4r.html">Log4r</a> API reference. There
+are two classes of reference, the file overview and the class API. They are
+listed under Files and Classes respectively. File overviews cover the use
+of the <a href="../../Log4r.html">Log4r</a> API and some implementation
+details, whereas class APIs detail the methods available to the various
+objects.
+</p>
+<p>
+The code examples in this API assume:
+</p>
+<pre>
+  include Log4r
+</pre>
+<p>
+This file overview covers some of the major concepts in <a
+href="../../Log4r.html">Log4r</a>.
+</p>
+<h2>Log Levels</h2>
+<p>
+<a href="../../Log4r.html">Log4r</a> provides as many levels of logging as
+desired. Logging levels are an ordered set of names ranked by priority. The
+more important a level is, the higher its priority and the more likely we
+want to see any data associated with it. <a
+href="../../Log4r.html">Log4r</a> provides many ways to filter information
+by level.
+</p>
+<p>
+Loggers and Outputters have a level parameter which serves as a level
+threshold. Any data below this threshold will be ignored by the Logger or
+Outputter. Additionally, Outputters can be set to mask out any particular
+level or collection of levels.
+</p>
+<p>
+By combining level thresholds with other <a
+href="../../Log4r.html">Log4r</a> features, one can direct any set of data
+to any destination desired in a way that is easy to visualize and
+configure.
+</p>
+<h3>Default Levels</h3>
+<p>
+The default log levels and their priority rankings are:
+</p>
+<pre>
+  DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL
+</pre>
+<h3>Custom Levels</h3>
+<p>
+You can have as many levels as you desire, with any naming scheme. <a
+href="../../Log4r.html">Log4r</a> will automatically define level constants
+and log method names after your custom specification.
+</p>
+<p>
+Please see <a href="../configurator_rb.html">log4r/configurator.rb</a> for
+details.
+</p>
+<h3>Boundary Levels</h3>
+<p>
+There are two special levels, <tt>ALL</tt> and <tt>OFF</tt> which denote
+whether we are logging at all levels or at none. The priority ranks with
+respect to the logging levels are as follows:
+</p>
+<pre>
+  ALL &lt; logging levels as defined by user &lt; OFF
+</pre>
+<p>
+Thus, setting the level to <tt>ALL</tt> will enable logging at all levels
+whereas <tt>OFF</tt> will turn off logging completely.
+</p>
+<h2>File Overviews</h2>
+<table>
+<tr><td valign="top">For Loggers:</td><td><a href="../logger_rb.html">log4r/logger.rb</a>
+
+</td></tr>
+<tr><td valign="top">For Outputters:</td><td><a href="../outputter/outputter_rb.html">log4r/outputter/outputter.rb</a>
+
+</td></tr>
+<tr><td valign="top">For Formatters:</td><td><a href="../formatter/formatter_rb.html">log4r/formatter/formatter.rb</a>
+
+</td></tr>
+<tr><td valign="top">For configuration:</td><td><a href="../configurator_rb.html">log4r/configurator.rb</a>
+
+</td></tr>
+</table>
+<h2>Principal Classes of <a href="../../Log4r.html">Log4r</a></h2>
+<ul>
+<li><a href="../../Log4r/Logger.html">Log4r::Logger</a> - Interface to logging
+
+</li>
+<li><a href="../../Log4r/Outputter.html">Log4r::Outputter</a> - An output
+destination for a logger.
+
+</li>
+<li><a href="../../Log4r/Formatter.html">Log4r::Formatter</a> - A means of
+formatting log data.
+
+</li>
+<li><a href="../../Log4r/Configurator.html">Log4r::Configurator</a> - A means
+of configuring <a href="../../Log4r.html">Log4r</a>
+
+</li>
+</ul>
+<h2>Convenience Classes</h2>
+<p>
+<a href="../../Log4r.html">Log4r</a> provides several convenience
+Outputters and Formatters. Please look at the file overviews of those
+classes for more details.
+</p>
+<h2>Remote Logging</h2>
+<p>
+<a href="../../Log4r.html">Log4r</a> provides a way to send log events over
+a network. See <a href="../logserver_rb.html">log4r/logserver.rb</a> for
+details.
+</p>
+<h2>What&#8217;s Going on Inside?</h2>
+<p>
+<a href="../../Log4r.html">Log4r</a> has an internal logger which records
+much of what goes on inside. To see the output, define a Logger named
+&#8216;log4r&#8217; and give it an Outputter of some sort. It logs only at
+the lowest and highest priorities. That would be DEBUG and FATAL for the
+standard setup.
+</p>
+<p>
+It is essential to view this data when using certain classes, like <a
+href="../../Log4r/LogServer.html">Log4r::LogServer</a> and <a
+href="../../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a>.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

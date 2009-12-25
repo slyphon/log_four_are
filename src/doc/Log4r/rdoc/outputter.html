@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: outputter [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../log4r/rdoc/configurator.html">configurator</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/emailoutputter.html">emailoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/formatter.html">formatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/log4r.html">log4r</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logger.html">logger</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/logserver.html">logserver</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/outputter.html">outputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/patternformatter.html">patternformatter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/syslogoutputter.html">syslogoutputter</a></li>
+				
+					<li class="file"><a href="../../log4r/rdoc/yamlconfigurator.html">yamlconfigurator</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Log4r.html">Log4r</a></li>
+				
+					<li><a href="../../Log4r/BasicFormatter.html">Log4r::BasicFormatter</a></li>
+				
+					<li><a href="../../Log4r/ConfigError.html">Log4r::ConfigError</a></li>
+				
+					<li><a href="../../Log4r/Configurator.html">Log4r::Configurator</a></li>
+				
+					<li><a href="../../Log4r/DateFileOutputter.html">Log4r::DateFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/DefaultFormatter.html">Log4r::DefaultFormatter</a></li>
+				
+					<li><a href="../../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a></li>
+				
+					<li><a href="../../Log4r/FileOutputter.html">Log4r::FileOutputter</a></li>
+				
+					<li><a href="../../Log4r/Formatter.html">Log4r::Formatter</a></li>
+				
+					<li><a href="../../Log4r/IOOutputter.html">Log4r::IOOutputter</a></li>
+				
+					<li><a href="../../Log4r/Log4rTools.html">Log4r::Log4rTools</a></li>
+				
+					<li><a href="../../Log4r/LogEvent.html">Log4r::LogEvent</a></li>
+				
+					<li><a href="../../Log4r/LogServer.html">Log4r::LogServer</a></li>
+				
+					<li><a href="../../Log4r/Logger.html">Log4r::Logger</a></li>
+				
+					<li><a href="../../Log4r/ObjectFormatter.html">Log4r::ObjectFormatter</a></li>
+				
+					<li><a href="../../Log4r/Outputter.html">Log4r::Outputter</a></li>
+				
+					<li><a href="../../Log4r/PatternFormatter.html">Log4r::PatternFormatter</a></li>
+				
+					<li><a href="../../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a></li>
+				
+					<li><a href="../../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a></li>
+				
+					<li><a href="../../Log4r/RootLogger.html">Log4r::RootLogger</a></li>
+				
+					<li><a href="../../Log4r/SimpleFormatter.html">Log4r::SimpleFormatter</a></li>
+				
+					<li><a href="../../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a></li>
+				
+					<li><a href="../../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a></li>
+				
+					<li><a href="../../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a></li>
+				
+					<li><a href="../../Log4r/YamlConfigurator.html">Log4r::YamlConfigurator</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1>Outputters</h1>
+<p>
+An Outputter is a logging destination with a particular way to format data.
+It has a level threshold and a flexible level mask.
+</p>
+<p>
+Outputters must have names.
+</p>
+<h2>Level Threshold</h2>
+<p>
+Outputters have their own level thresholds that default to <tt>root</tt>
+level. They will not write any log events with a rank less than their
+threshold.
+</p>
+<h2>Level Mask</h2>
+<p>
+Alternatively, an Outputter can be told to log specific levels only:
+</p>
+<pre>
+  o = StdoutOutputter.new 'console'
+  o.only_at DEBUG, FATAL         # only DEBUG and FATAL get written
+</pre>
+<h2>Outputter Repository</h2>
+<p>
+When outputters are created, they store themselves in an Outputter
+repository similar to the Logger repository.
+</p>
+<pre>
+  StdoutOutputter.new 'console'   =&gt; Create 'console' outputter
+  Outputter['console']            =&gt; Get it back from the stash.
+</pre>
+<h2>Formatter</h2>
+<p>
+An outputter has a format defined by its Formatter. If no Formatter is
+specified, DefaultFormatter will be used.
+</p>
+<h2>Outputter is Abstract</h2>
+<p>
+The basic Outputter class is both abstract and a null object.
+</p>
+<h2>Interesting Outputters</h2>
+<ul>
+<li><a
+href="../outputter/syslogoutputter_rb.html">log4r/outputter/syslogoutputter.rb</a>
+- Logs to syslog
+
+</li>
+<li><a
+href="../outputter/emailoutputter_rb.html">log4r/outputter/emailoutputter.rb</a>
+- Email logs
+
+</li>
+<li><a href="../logserver_rb.html">log4r/logserver.rb</a> - For remote logging
+
+</li>
+</ul>
+<h2>Subclasses</h2>
+<ul>
+<li><a href="../../Log4r/IOOutputter.html">Log4r::IOOutputter</a> - for any IO
+object
+
+</li>
+<li><a href="../../Log4r/StdoutOutputter.html">Log4r::StdoutOutputter</a> -
+$stdout
+
+</li>
+<li><a href="../../Log4r/StderrOutputter.html">Log4r::StderrOutputter</a> -
+$stderr
+
+</li>
+<li><a href="../../Log4r/FileOutputter.html">Log4r::FileOutputter</a> - log to
+a file
+
+</li>
+<li><a
+href="../../Log4r/RollingFileOutputter.html">Log4r::RollingFileOutputter</a>
+- log to a file and split it as it grows
+
+</li>
+<li><a href="../../Log4r/SyslogOutputter.html">Log4r::SyslogOutputter</a> -
+logs to syslog
+
+</li>
+<li><a href="../../Log4r/EmailOutputter.html">Log4r::EmailOutputter</a> - email
+logs
+
+</li>
+<li><a href="../../Log4r/RemoteOutputter.html">Log4r::RemoteOutputter</a> - for
+remote logging
+
+</li>
+</ul>
+<h2>Default Outputters</h2>
+<p>
+Two outputters named &#8216;stdout&#8217; and &#8216;stderr&#8217; are
+created automatically at the root level. They are nice shortcuts.
+</p>
+<pre>
+  Outputter['stdout'] =&gt; 'stdout'
+  Outputter['stderr'] =&gt; 'stderr'
+  Outputter.stdout    =&gt; 'stdout'
+  Outputter.stderr    =&gt; 'stderr'
+</pre>
+<h2>Configuring</h2>
+<p>
+Outputters must have names and receive hash arguments. The parameter name
+for the hash args can be either a symbol or a string. All defined
+outputters accept <tt>:level</tt> and <tt>:formatter</tt> arguments. For
+arguments specific to a convenience Outputter, please look at the class
+description.
+</p>
+<p>
+The level threshold, the levels to log at (only_at) and formatter can be
+changed dynamically using the <tt>=</tt> methods.
+</p>
+<p>
+As a collective example of all this, here are various ways to set up an
+IOOutputter:
+</p>
+<pre>
+  IOOutputter.new ExoticIO.new 'exotic', 'level' =&gt; WARN,
+                  :formatter =&gt; MyFormatter.new
+  # an equivalent way:
+  o = IOOutputter.new ExoticIO.new 'exotic'
+  o.level = WARN
+  o.formatter = MyFormatter         # we can specify just the class
+  o.only_at = THIS, THAT
+</pre>
+<h2>XML Configuration</h2>
+<p>
+Specify outputters as children of <tt>&lt;log4r_config&gt;</tt>:
+</p>
+<pre>
+  &lt;log4r_config&gt;
+    &lt;outputter name=&quot;myout&quot; type=&quot;Log4r::StdoutOutputter&quot;&gt;
+      &lt;only_at&gt;DEBUG, INFO&lt;/only_at&gt;
+    &lt;/outputter&gt;
+    &lt;outputter name=&quot;file&quot; level=&quot;WARN&quot;&gt;
+      &lt;type&gt;FileOutputter&lt;/type&gt;
+      &lt;filename&gt;#{logpath}/file.log&lt;/filename&gt;
+      &lt;trunc&gt;false&lt;/trunc&gt;
+    &lt;/outputter&gt;
+    ...
+</pre>
+<p>
+As explained in <a
+href="../configurator_rb.html">log4r/configurator.rb</a>, the hash
+arguments you would normally pass to <tt>new</tt> are specified as <em>XML
+parameters</em>. It is given an IO object to write to, a Formatter to call,
+and, optionally, levels to write at.
+</p>
+<p>
+Outputters invoke print then flush on the wrapped IO object. If the IO
+chokes, the Outputter will close the IO and set its level to <tt>OFF</tt>.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

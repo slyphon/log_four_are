@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: syslogoutputter.rb [1.1.2 Log4r API Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">Fri Sep 25 12:58:54 -0700 2009</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>log4r/formatter/formatter</li>
+				
+					<li>log4r/outputter/outputter</li>
+				
+					<li>log4r/configurator</li>
+				
+					<li>syslog</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<h1>SyslogOutputter</h1>
+<p>
+A SyslogOutputter transforms a <a
+href="../../Log4r/LogEvent.html">Log4r::LogEvent</a> into a call to
+syslog(). Since syslog has its own formatting system, log4r formatters are
+ignored.
+</p>
+<h2>Usage</h2>
+<p>
+To use,
+</p>
+<pre>
+  &lt;tt&gt;require 'log4r/outputter/syslogoutputter'&lt;/tt&gt;
+</pre>
+<p>
+An example,
+</p>
+<pre>
+  require 'log4r'
+  require 'log4r/outputter/syslogoutputter'
+
+  syslog = Log4r::SyslogOutputter.new(&quot;name&quot;, 'logopt'=&gt;#, 'facility'=&gt;#)
+  syslog.err(&quot;this is an ERR message&quot;)
+</pre>
+<p>
+The output in <tt>/var/logs/syslog</tt> (Debian) is,
+</p>
+<pre>
+  Sep  3 11:43:06 tiphares sys[1603]: this is an ERR message
+</pre>
+<p>
+The hash arguments <tt>logoptions</tt> and <tt>facility</tt> are passed to
+<tt>Syslog.open</tt>. The defaults are <tt>LOG_PID | LOG_CONS</tt> and
+<tt>LOG_USER</tt> respectively.
+</p>
+<p>
+This is a first try implementation. It works well. Please report any bugs
+and fixes.
+</p>
+<table>
+<tr><td valign="top">Version:</td><td>$Id: syslogoutputter.rb,v 1.4 2009/09/24 23:11:16 colbygk Exp $
+
+</td></tr>
+<tr><td valign="top">Author:</td><td>Steve Lumos
+
+</td></tr>
+<tr><td valign="top">Author:</td><td>Leon Torres
+
+</td></tr>
+</table>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+
