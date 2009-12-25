@@ -170,7 +170,7 @@ module Log4r
       @outputters = []
       Repository['root'] = self
       Repository['global'] = self
-      LoggerFactory.undefine_methods(self)
+      LoggerFactory.define_methods(self)
     end
 
     def is_root?; true end
@@ -181,14 +181,8 @@ module Log4r
     def level=(alevel); @level = alevel end
 
     # Does nothing
-    def outputters=(foo); end
-    # Does nothing
     def trace=(foo); end
     # Does nothing
     def additive=(foo); end
-    # Does nothing
-    def add(*foo); end
-    # Does nothing
-    def remove(*foo); end
   end
 end

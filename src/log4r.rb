@@ -11,7 +11,8 @@ require "log4r/outputter/staticoutputter"
 require "log4r/outputter/rollingfileoutputter"
 require "log4r/formatter/patternformatter"
 require "log4r/loggerfactory"
+require "log4r/yamlconfigurator"
 
 module Log4r
-  Log4rVersion = [1, 1, 2].join '.'
+  Log4rVersion = [2, 0, 0].join '.'
 end
