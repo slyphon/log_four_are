@@ -9,12 +9,12 @@ require 'rubygems/specification'
 require 'date'
 require 'fileutils'
 
-GEM = "log4r"
-GEM_VERSION = "1.1.2"
+GEM = "log_four_are"
+GEM_VERSION = "0.1.0"
 AUTHOR = "Colby Gutierrez-Kraybill"
 EMAIL = "colby@astro.berkeley.edu"
 HOMEPAGE = %q{http://log4r.rubyforge.org}
-SUMMARY = "Log4r, logging framework for ruby"
+SUMMARY = "Log4r (v1.1.2), logging framework for ruby (with some minor additions and behavioral tweaks)"
 DESCRIPTION = "See also: http://logging.apache.org/log4j"
 DIRS = [ "doc/**/*", "examples/**/*", "src/**/*", "tests/**/*" ]
 
