@@ -21,7 +21,7 @@ class Logger
     end
 
     def self.[](fullname)
-      instance.loggers[fullname]
+      instance.loggers.fetch(fullname) { |k| self[fullname] = Logger.new(fullname) }
     end
 
     def self.[]=(fullname, logger)
