@@ -45,8 +45,8 @@ module Log4r
     end
 
     # You can load a String YAML configuration instead of a file.
-    def self.load_yaml_string( string)
-      actual_load( string)
+    def self.load_yaml_string(string, key=nil)
+      actual_load(string, key)
     end
 
     #######
