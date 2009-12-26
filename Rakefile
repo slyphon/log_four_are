@@ -10,7 +10,7 @@ require 'date'
 require 'fileutils'
 
 GEM = "log_four_are"
-GEM_VERSION = "0.1.0"
+GEM_VERSION = "0.1.1"
 AUTHOR = "Colby Gutierrez-Kraybill"
 EMAIL = "colby@astro.berkeley.edu"
 HOMEPAGE = %q{http://log4r.rubyforge.org}
