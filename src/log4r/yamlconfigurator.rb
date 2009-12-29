@@ -67,9 +67,9 @@ module Log4r
     
     def self.decode_yaml( cfg)
       decode_pre_config( cfg['pre_config'])
-      cfg['outputters'].each{ |op| decode_outputter( op)}
-      cfg['loggers'].each{ |lo| decode_logger( lo)}
-      cfg['logserver'].each{ |lo| decode_logserver( lo)} unless cfg['logserver'].nil?
+      cfg['outputters'].each{|op| decode_outputter(op)}
+      cfg['loggers'].each{ |lo| decode_logger(lo)}
+      cfg['logserver'].each{ |lo| decode_logserver(lo)} unless cfg['logserver'].nil?
     end
 
     def self.decode_pre_config( pre)
@@ -84,7 +84,7 @@ module Log4r
       return Logger.root if levels.nil?
       begin custom_levels( levels)
       rescue TypeError => te
-        raise ConfigError, te.message, caller[1..-4]
+        raise ConfigError, te.message
       end
     end
     
@@ -108,8 +108,8 @@ module Log4r
       level = op['level']
       only_at = op['only_at']
       # validation
-      raise ConfigError, "Outputter missing name", caller[1..-3] if name.nil?
-      raise ConfigError, "Outputter missing type", caller[1..-3] if type.nil?
+      raise ConfigError, "Outputter missing name" if name.nil?
+      raise ConfigError, "Outputter missing type" if type.nil?
       Log4rTools.validate_level(LNAMES.index(level)) unless level.nil?
       only_levels = []
       unless only_at.nil?
@@ -121,17 +121,17 @@ module Log4r
       end
 
       formatter = decode_formatter( op['formatter'])
+
       # build the eval string
       buff = "Outputter[name] = #{type}.new name"
       buff += ",:level=>#{LNAMES.index(level)}" unless level.nil?
       buff += ",:formatter=>formatter" unless formatter.nil?
+
       params = decode_hash_params( op)
       buff += "," + params.join(',') if params.size > 0
-      begin eval buff
-      rescue Exception => ae
-        raise ConfigError, 
-        "Problem creating outputter: #{ae.message}", caller[1..-3]
-      end
+
+      eval(buff, nil, __FILE__, __LINE__)
+
       Outputter[name].only_at( *only_levels) if only_levels.size > 0
       Outputter[name]
     end
@@ -139,12 +139,12 @@ module Log4r
     def self.decode_formatter( fo)
       return nil if fo.nil?
       type = fo['type'] 
-      raise ConfigError, "Formatter missing type", caller[1..-4] if type.nil?
+      raise ConfigError, "Formatter missing type" if type.nil?
       buff = "#{type}.new " + decode_hash_params( fo).join(',')
       begin return eval( buff)
       rescue Exception => ae
         raise ConfigError,
-        "Problem creating outputter: #{ae.message}", caller[1..-4]
+        "Problem creating outputter: #{ae.message}"
       end
     end
 
@@ -155,20 +155,20 @@ module Log4r
       buff = []
       ph.each{ |name, value| 
         next if ExcludeParams.include? name
-        buff << ":" + name + "=>" + paramsub( value)
+        buff << ":" + name + "=>" + value.inspect
       }
       buff
     end
     
     # Substitues any #{foo} in the YAML with Parameter['foo']
-    def self.paramsub( str)
-      return nil if str.nil?
-      return nil if str.class != String
-      @@params.each {|param, value|
-        str.sub!( '#{' + param + '}', value)
-      }
-      "'" + str + "'"
-    end
+#     def self.paramsub( str)
+#       return nil if str.nil?
+#       return nil if str.class != String
+#       @@params.each {|param, value|
+#         str.sub!( '#{' + param + '}', value)
+#       }
+#       "'" + str + "'"
+#     end
 
     def self.decode_logger( lo)
       l = Logger.new lo['name']

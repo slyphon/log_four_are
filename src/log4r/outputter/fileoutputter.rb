@@ -10,18 +10,21 @@ module Log4r
   #
   # [<tt>:filename</tt>]   Name of the file to log to.
   # [<tt>:trunc</tt>]      Truncate the file?
+  # [<tt>:sync</tt>]       synchronize writes to the filesystem?
   class FileOutputter < IOOutputter
-    attr_reader :trunc, :filename
+    attr_reader :trunc, :filename, :sync
 
     def initialize(_name, hash={})
       super(_name, nil, hash)
 
       @trunc = Log4rTools.decode_bool(hash, :trunc, true)
-      _filename = (hash[:filename] or hash['filename'])
+      @sync  = Log4rTools.decode_bool(hash, :sync, true)
 
-      if _filename.class != String
-        raise TypeError, "Argument 'filename' must be a String", caller
+      unless _filename = (hash[:filename] or hash['filename'])
+        raise StandardError, "you must supply a 'filename' argument"
       end
+
+      _filename = _filename.to_s
 
       # file validation
       if FileTest.exist?( _filename )
@@ -38,12 +41,20 @@ module Log4r
       end
 
       @filename = _filename
-      @out = File.new(@filename, (@trunc ? "w" : "a")) 
+      @out = open_logfile
+
       Logger.log_internal {
         "FileOutputter '#{@name}' writing to #{@filename}"
       }
     end
 
+    protected
+    
+    def open_logfile
+      fp = File.new(@filename, (@trunc ? "w" : "a")) 
+      fp.sync = @sync
+      fp
+    end
   end
   
 end

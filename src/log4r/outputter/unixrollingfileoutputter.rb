@@ -1,7 +1,3 @@
-
-# :nodoc:
-# Version:: $Id: rollingfileoutputter.rb,v 1.1.1.1 2004/03/19 03:31:10 fando Exp $
-
 require "log4r/outputter/fileoutputter"
 require "log4r/staticlogger"
 
@@ -12,12 +8,16 @@ module Log4r
   #
   # [<tt>:maxsize</tt>]   Maximum size of the file in bytes.
   # [<tt>:trunc</tt>]	  Maximum age of the file in seconds.
-  class RollingFileOutputter < FileOutputter
+  # [<tt>:keep</tt>]      the number of rolled logfiles to keep 
+  #                       if keep == 3, then there will be files 
+  #                       [blah.log, blah.log.0, blah.log.1, blah.log.2]
+  #                       
+  class UnixRollingFileOutputter < FileOutputter
 
-    attr_reader :count, :maxsize, :maxtime, :start_time #,i:base_filename
+    attr_reader :keep, :maxsize, :maxtime, :start_time#,i:base_filename
 
     def initialize(_name, hash={})
-      @count = 0
+      @keep = 0
       super(_name, hash)
       if hash.has_key?(:maxsize) || hash.has_key?('maxsize') 
         _maxsize = (hash[:maxsize] or hash['maxsize']).to_i
@@ -40,11 +40,20 @@ module Log4r
         @maxtime = _maxtime
         @start_time = Time.now
       end
-      @base_filename = File.basename(@filename)
-      # roll immediately so all files are of the form "000001-@base_filename"
-      roll
+
+      if hash.has_key?(:keep) || hash.has_key?('keep') 
+        keep = (hash[:keep] or hash['keep']).to_i
+        if keep <= 0
+          raise StandardError, "Argument 'keep' must be >= 1, not #{keep.inspect}"
+        end
+
+        @keep = keep
+      else
+        raise StandardError, "You must provide a non-zero 'keep' argument"
+      end
+
       # initialize the file size counter
-      @datasize = 0
+      @datasize = File.size(@filename)
     end
 
     #######
@@ -59,15 +68,6 @@ module Log4r
       super
       roll if roll_required?
     end
-
-    # construct a new filename from the count and baseFilname
-    def make_new_filename
-      # note use of hard coded 6 digit counter width - is this enough files?
-      pad = "0" * (6 - @count.to_s.length) + count.to_s
-      newbase = @base_filename.sub(/(\.\w*)$/, pad + '\1')
-      @filename = File.join(File.dirname(@filename), newbase)
-      Logger.log_internal {"File #{@filename} created"}
-    end 
 
     # does the file require a roll?
     def roll_required?
@@ -85,42 +85,23 @@ module Log4r
     # roll the file
     def roll
       begin
+        @out.fsync
         @out.close
       rescue 
         Logger.log_internal {
           "RollingFileOutputter '#{@name}' could not close #{@filename}"
         }
       end
-      @count += 1
-      make_new_filename
-      @out = File.new(@filename, (@trunc ? "w" : "a"))
+
+      (@keep - 2).downto(0) do |i|
+        a, b = "#{filename}.#{i}", "#{filename}.#{i+1}"
+        FileUtils.mv(a,b) if File.exist?(a)
+      end
+
+      FileUtils.mv(filename, "#{filename}.0")
+      @out = open_logfile
     end 
-
   end
-
 end
 
-# this can be found in examples/fileroll.rb as well
-if __FILE__ == $0
-  require 'log4r'
-  include Log4r
 
-
-  timeLog = Logger.new 'WbExplorer'
-  timeLog.outputters = RollingFileOutputter.new("WbExplorer", { "filename" => "TestTime.log", "maxtime" => 10, "trunc" => true })
-  timeLog.level = DEBUG
-
-  100.times { |t|
-    timeLog.info "blah #{t}"
-    sleep(1.0)
-  }
-
-  sizeLog = Logger.new 'WbExplorer'
-  sizeLog.outputters = RollingFileOutputter.new("WbExplorer", { "filename" => "TestSize.log", "maxsize" => 16000, "trunc" => true })
-  sizeLog.level = DEBUG
-
-  10000.times { |t|
-    sizeLog.info "blah #{t}"
-  }
-
-end
