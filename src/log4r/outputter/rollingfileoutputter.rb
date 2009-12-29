@@ -14,7 +14,7 @@ module Log4r
   # [<tt>:trunc</tt>]	  Maximum age of the file in seconds.
   class RollingFileOutputter < FileOutputter
 
-    attr_reader :count, :maxsize, :maxtime, :start_time #,i:base_filename
+    attr_reader :count, :maxsize, :maxtime, :startTime#,i:baseFilename
 
     def initialize(_name, hash={})
       @count = 0
@@ -38,10 +38,10 @@ module Log4r
           raise TypeError, "Argument 'maxtime' must be > 0", caller
         end
         @maxtime = _maxtime
-        @start_time = Time.now
+        @startTime = Time.now
       end
-      @base_filename = File.basename(@filename)
-      # roll immediately so all files are of the form "000001-@base_filename"
+      @baseFilename = File.basename(@filename)
+      # roll immediately so all files are of the form "000001-@baseFilename"
       roll
       # initialize the file size counter
       @datasize = 0
@@ -57,26 +57,26 @@ module Log4r
       # seem to report the correct size when the size changes rapidly
       @datasize += data.size + 1 # the 1 is for newline
       super
-      roll if roll_required?
+      roll if requiresRoll
     end
 
     # construct a new filename from the count and baseFilname
-    def make_new_filename
+    def makeNewFilename
       # note use of hard coded 6 digit counter width - is this enough files?
       pad = "0" * (6 - @count.to_s.length) + count.to_s
-      newbase = @base_filename.sub(/(\.\w*)$/, pad + '\1')
+      newbase = @baseFilename.sub(/(\.\w*)$/, pad + '\1')
       @filename = File.join(File.dirname(@filename), newbase)
       Logger.log_internal {"File #{@filename} created"}
     end 
 
     # does the file require a roll?
-    def roll_required?
+    def requiresRoll
       if !@maxsize.nil? && @datasize > @maxsize
         @datasize = 0
         return true
       end
-      if !@maxtime.nil? && (Time.now - @start_time) > @maxtime
-        @start_time = Time.now
+      if !@maxtime.nil? && (Time.now - @startTime) > @maxtime
+        @startTime = Time.now
         return true
       end
       false
@@ -92,7 +92,7 @@ module Log4r
         }
       end
       @count += 1
-      make_new_filename
+      makeNewFilename
       @out = File.new(@filename, (@trunc ? "w" : "a"))
     end 
 
